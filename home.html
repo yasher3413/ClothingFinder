@@ -1,0 +1,82 @@
+<!-- templates/home.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="main-container">
+    <div class="content">
+        <form method="POST" id="city-form" class="mb-4" data-aos="fade-up">
+            <label for="city">Enter your city:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Outfit Recommendation</button>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-danger form-error">{{ error }}</div>
+        {% endif %}
+
+        {% if weather %}
+        <div class="card mb-4" data-aos="fade-up">
+            <div class="card-header bg-danger">
+                Current Weather in {{ weather['city_name'] }}
+            </div>
+            <div class="card-body">
+                <div class="weather-info">
+                    <p><strong>Temperature:</strong> {{ weather['temperature'] }}°C</p>
+                    <p><strong>Condition:</strong> {{ weather['condition'] }}</p>
+                    <p><strong>Humidity:</strong> {{ weather['humidity'] }}%</p>
+                    <p><strong>Wind Speed:</strong> {{ weather['wind_speed'] }} m/s</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if outfit %}
+        <div class="card mb-4" data-aos="fade-up">
+            <div class="card-header bg-primary">
+                Recommended Outfit
+            </div>
+            <div class="card-body">
+                <div class="outfit-items">
+                    {% for part, item in outfit.items() %}
+                    <div class="outfit-item" data-aos="zoom-in">
+                        <h3>{{ part }}</h3>
+                        {% if item.get('image_url') %}
+                        <img src="{{ item['image_url'] }}" alt="{{ item['type'] }}" class="img-fluid mb-2">
+                        {% endif %}
+                        <p><strong>Brand:</strong> {{ item['brand'] }}</p>
+                        <p><strong>Type:</strong> {{ item['type'] }}</p>
+                        <p><strong>Material:</strong> {{ item['material'] }}</p>
+                        <p><strong>Color:</strong> {{ item['color'] }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('add_item') }}" class="btn btn-secondary" data-aos="fade-up">Add a new clothing item</a>
+        <a href="{{ url_for('wardrobe') }}" class="btn btn-info" data-aos="fade-up">View My Wardrobe</a>
+    </div>
+
+    <!-- Sidebar with major cities weather -->
+    <div class="sidebar" data-aos="fade-left">
+        <div class="weather-feed" style="--item-count: {{ major_cities_weather|length }};">
+            {% for city_weather in major_cities_weather %}
+            <div class="weather-box">
+                <h4>{{ city_weather.city_name }}</h4>
+                <p>Temperature: {{ city_weather.temperature }}°C</p>
+                <p>Condition: {{ city_weather.condition }}</p>
+            </div>
+            {% endfor %}
+            <!-- Duplicate the content to create a seamless loop -->
+            {% for city_weather in major_cities_weather %}
+            <div class="weather-box">
+                <h4>{{ city_weather.city_name }}</h4>
+                <p>Temperature: {{ city_weather.temperature }}°C</p>
+                <p>Condition: {{ city_weather.condition }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

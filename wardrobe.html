@@ -1,0 +1,61 @@
+<!-- templates/wardrobe.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ current_user.username }}'s Wardrobe</h2>
+<a href="{{ url_for('add_item') }}" class="btn btn-primary mb-3">
+    Add New Item
+</a>
+{% if wardrobe %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Material</th>
+            <th>Color</th>
+            <th>Warmth Level</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in wardrobe %}
+        <tr>
+            <td>{{ item['brand'] }}</td>
+            <td>{{ item['type'] }}</td>
+            <td>{{ item['material'] }}</td>
+            <td>{{ item['color'] }}</td>
+            <td>{{ item['warmth_level'] }}</td>
+            <td>{{ item['category'] }}</td>
+            <td>
+                {% if item.get('image_url') %}
+                <img src="{{ item['image_url'] }}"
+                     alt="{{ item['type'] }}"
+                     class="img-thumbnail" width="80">
+                {% else %}
+                N/A
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ url_for('edit_item', item_id=item['id']) }}"
+                   class="btn btn-sm btn-warning">
+                    Edit
+                </a>
+                <form method="POST"
+                      action="{{ url_for('delete_item', item_id=item['id']) }}"
+                      style="display: inline;">
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Your wardrobe is empty. Start by adding some items.</p>
+{% endif %}
+{% endblock %}

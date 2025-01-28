@@ -15,9 +15,6 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Database Migration](#database-migration)
-- [Example Usage](#example-usage)
 - [Contributing](#contributing)
 - [License](#license)
 

@@ -30,7 +30,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.config.from_object(config['development'])
 app.config['SECRET_KEY'] = 'your-secret-key'  # Replace with your secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///clothingfinder.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dresssense.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize extensions

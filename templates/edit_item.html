@@ -1,0 +1,72 @@
+<!-- templates/edit_item.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Item</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="brand">Brand:</label>
+        <input type="text" name="brand" id="brand"
+               value="{{ item['brand'] }}" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type"
+               value="{{ item['type'] }}" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="material">Material:</label>
+        <input type="text" name="material" id="material"
+               value="{{ item['material'] }}" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color"
+               value="{{ item['color'] }}" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="warmth_level">Warmth Level (1-10):</label>
+        <input type="number" name="warmth_level" id="warmth_level"
+               min="1" max="10" value="{{ item['warmth_level'] }}"
+               class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select name="category" id="category"
+                class="form-control" required>
+            <option value="Top"
+                {% if item['category'] == 'Top' %}selected{% endif %}>
+                Top
+            </option>
+            <option value="Bottom"
+                {% if item['category'] == 'Bottom' %}selected{% endif %}>
+                Bottom
+            </option>
+            <option value="Outerwear"
+                {% if item['category'] == 'Outerwear' %}selected{% endif %}>
+                Outerwear
+            </option>
+            <option value="Footwear"
+                {% if item['category'] == 'Footwear' %}selected{% endif %}>
+                Footwear
+            </option>
+            <option value="Accessory"
+                {% if item['category'] == 'Accessory' %}selected{% endif %}>
+                Accessory
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="image_url">Image URL:</label>
+        <input type="text" name="image_url" id="image_url"
+               value="{{ item.get('image_url', '') }}"
+               class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Save Changes
+    </button>
+</form>
+<a href="{{ url_for('wardrobe') }}" class="btn btn-secondary mt-2">
+    Back to Wardrobe
+</a>
+{% endblock %}

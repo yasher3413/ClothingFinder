@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Your Style Preferences</h2>
+    
+    <form method="POST" action="{{ url_for('update_preferences') }}">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Favorites</h4>
+                <div class="mb-3">
+                    <label class="form-label">Favorite Colors</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_colors" value="black" {% if 'black' in preferences.favorite_colors %}checked{% endif %}>
+                        <label class="form-check-label">Black</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_colors" value="white" {% if 'white' in preferences.favorite_colors %}checked{% endif %}>
+                        <label class="form-check-label">White</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_colors" value="blue" {% if 'blue' in preferences.favorite_colors %}checked{% endif %}>
+                        <label class="form-check-label">Blue</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_colors" value="red" {% if 'red' in preferences.favorite_colors %}checked{% endif %}>
+                        <label class="form-check-label">Red</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Favorite Styles</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_styles" value="casual" {% if 'casual' in preferences.favorite_styles %}checked{% endif %}>
+                        <label class="form-check-label">Casual</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_styles" value="formal" {% if 'formal' in preferences.favorite_styles %}checked{% endif %}>
+                        <label class="form-check-label">Formal</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_styles" value="sporty" {% if 'sporty' in preferences.favorite_styles %}checked{% endif %}>
+                        <label class="form-check-label">Sporty</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Favorite Patterns</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_patterns" value="solid" {% if 'solid' in preferences.favorite_patterns %}checked{% endif %}>
+                        <label class="form-check-label">Solid</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_patterns" value="striped" {% if 'striped' in preferences.favorite_patterns %}checked{% endif %}>
+                        <label class="form-check-label">Striped</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="favorite_patterns" value="checked" {% if 'checked' in preferences.favorite_patterns %}checked{% endif %}>
+                        <label class="form-check-label">Checked</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Dislikes</h4>
+                <div class="mb-3">
+                    <label class="form-label">Disliked Colors</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_colors" value="pink" {% if 'pink' in preferences.disliked_colors %}checked{% endif %}>
+                        <label class="form-check-label">Pink</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_colors" value="yellow" {% if 'yellow' in preferences.disliked_colors %}checked{% endif %}>
+                        <label class="form-check-label">Yellow</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_colors" value="orange" {% if 'orange' in preferences.disliked_colors %}checked{% endif %}>
+                        <label class="form-check-label">Orange</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Disliked Styles</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_styles" value="bohemian" {% if 'bohemian' in preferences.disliked_styles %}checked{% endif %}>
+                        <label class="form-check-label">Bohemian</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_styles" value="vintage" {% if 'vintage' in preferences.disliked_styles %}checked{% endif %}>
+                        <label class="form-check-label">Vintage</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Disliked Patterns</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_patterns" value="floral" {% if 'floral' in preferences.disliked_patterns %}checked{% endif %}>
+                        <label class="form-check-label">Floral</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="disliked_patterns" value="polka" {% if 'polka' in preferences.disliked_patterns %}checked{% endif %}>
+                        <label class="form-check-label">Polka Dots</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Save Preferences</button>
+        </div>
+    </form>
+</div>
+{% endblock %} 

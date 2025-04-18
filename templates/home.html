@@ -1,0 +1,121 @@
+<!-- templates/home.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('home') }}" id="outfit-form">
+    <div class="row">
+        <!-- Weather Section -->
+        <div class="col-md-4 mb-4">
+            <div class="card" data-aos="fade-right">
+                <div class="card-header">
+                    <i class="fas fa-cloud-sun me-2"></i>Weather Information
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="city" class="form-label">Enter City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                    {% if weather %}
+                    <div class="mt-4">
+                        <h5 class="mb-3">{{ weather.city }}</h5>
+                        <p><i class="fas fa-temperature-high me-2"></i>Temperature: {{ weather.temperature }}°C</p>
+                        <p><i class="fas fa-cloud me-2"></i>Conditions: {{ weather.conditions }}</p>
+                    </div>
+                    {% endif %}
+                    {% if error %}
+                    <div class="alert alert-danger mt-3">
+                        <i class="fas fa-exclamation-circle me-2"></i>{{ error }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Occasion Section -->
+        <div class="col-md-4 mb-4">
+            <div class="card" data-aos="fade-up">
+                <div class="card-header">
+                    <i class="fas fa-calendar-alt me-2"></i>Select Occasion
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="occasion" class="form-label">Choose Occasion</label>
+                        <select class="form-select" id="occasion" name="occasion" required>
+                            <option value="">Select an occasion</option>
+                            {% for occasion in occasions %}
+                            <option value="{{ occasion }}">{{ occasion|title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-magic me-2"></i>Get Outfit Suggestion
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outfit Suggestions -->
+        <div class="col-md-4 mb-4">
+            <div class="card" data-aos="fade-left">
+                <div class="card-header">
+                    <i class="fas fa-tshirt me-2"></i>Suggested Outfits
+                </div>
+                <div class="card-body">
+                    {% if outfit %}
+                    <div class="outfit-list">
+                        <div class="outfit-item mb-3">
+                            <h6 class="mb-2">Recommended Outfit</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar" role="progressbar" 
+                                     data-score="{{ outfit_scores.total_score * 100 }}" 
+                                     style="width: 0%; transition: width 1s ease-in-out;">
+                                    {{ "%.1f"|format(outfit_scores.total_score * 100) }}%
+                                </div>
+                            </div>
+                            <div class="outfit-items">
+                                {% for part, item in outfit.items() %}
+                                <div class="card mb-2">
+                                    <div class="card-body p-2">
+                                        <h6 class="card-title mb-2">
+                                            <i class="fas fa-{{ part|lower }} me-1"></i>{{ item.type }}
+                                        </h6>
+                                        <div class="small text-muted">
+                                            {% if item.brand %}<p class="mb-1"><strong>Brand:</strong> {{ item.brand }}</p>{% endif %}
+                                            {% if item.material %}<p class="mb-1"><strong>Material:</strong> {{ item.material }}</p>{% endif %}
+                                            {% if item.color %}<p class="mb-1"><strong>Color:</strong> {{ item.color }}</p>{% endif %}
+                                            {% if item.warmth_level %}<p class="mb-1"><strong>Warmth:</strong> {{ item.warmth_level }}/10</p>{% endif %}
+                                        </div>
+                                        {% if item.image_url %}
+                                        <img src="{{ item.image_url }}" alt="{{ item.type }}" class="img-thumbnail mt-2" style="max-width: 100px;">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <p class="text-center text-muted">
+                        <i class="fas fa-info-circle me-2"></i>Select a city and occasion to get outfit suggestions
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate progress bars
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const score = bar.getAttribute('data-score');
+        setTimeout(() => {
+            bar.style.width = score + '%';
+        }, 100);
+    });
+});
+</script>
+{% endblock %}

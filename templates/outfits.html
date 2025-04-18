@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}My Outfits - ClothingFinder{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <h2 class="display-5">My Outfits</h2>
+            <p class="text-muted">View your outfit history and get recommendations</p>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newOutfitModal">
+                <i class="fas fa-plus me-2"></i>Create New Outfit
+            </button>
+        </div>
+    </div>
+
+    {% if outfit_history %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for outfit in outfit_history %}
+        <div class="col" data-aos="fade-up">
+            <div class="card h-100">
+                <div class="card-header bg-transparent">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">{{ outfit.occasion }}</h5>
+                        <span class="badge bg-primary">{{ outfit.weather_condition }}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="outfit-items mb-3">
+                        {% for item in outfit.items %}
+                        <div class="outfit-item d-flex align-items-center mb-2">
+                            <div class="item-icon me-2">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">{{ item.item.type }}</div>
+                                <div class="item-color text-muted small">{{ item.item.color }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="outfit-stats">
+                        <div class="progress mb-2">
+                            <div class="progress-bar" role="progressbar" data-rating="{{ outfit.rating }}" style="width: 0%"
+                                aria-valuenow="{{ outfit.rating * 20 }}" aria-valuemin="0" aria-valuemax="100">
+                                {{ outfit.rating }}/5
+                            </div>
+                        </div>
+                        <div class="text-muted small">
+                            <i class="fas fa-calendar me-1"></i>
+                            {{ outfit.created_at.strftime('%B %d, %Y') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="btn-group w-100">
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-edit me-1"></i>Edit
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="fas fa-trash me-1"></i>Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-5" data-aos="fade-up">
+        <i class="fas fa-tshirt fa-4x text-muted mb-3"></i>
+        <h3>No Outfits Yet</h3>
+        <p class="text-muted">Start creating your first outfit to see it here!</p>
+        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#newOutfitModal">
+            <i class="fas fa-plus me-2"></i>Create Your First Outfit
+        </button>
+    </div>
+    {% endif %}
+</div>
+
+<!-- New Outfit Modal -->
+<div class="modal fade" id="newOutfitModal" tabindex="-1" aria-labelledby="newOutfitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newOutfitModalLabel">Create New Outfit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="newOutfitForm">
+                    <div class="mb-3">
+                        <label for="occasion" class="form-label">Occasion</label>
+                        <select class="form-select" id="occasion" name="occasion" required>
+                            <option value="">Select an occasion</option>
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                            <option value="business">Business</option>
+                            <option value="sport">Sport</option>
+                            <option value="party">Party</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="weather" class="form-label">Weather Condition</label>
+                        <select class="form-select" id="weather" name="weather" required>
+                            <option value="">Select weather condition</option>
+                            <option value="sunny">Sunny</option>
+                            <option value="rainy">Rainy</option>
+                            <option value="cloudy">Cloudy</option>
+                            <option value="cold">Cold</option>
+                            <option value="hot">Hot</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Select Items</label>
+                        <div class="wardrobe-categories">
+                            <div class="nav nav-tabs mb-3" id="wardrobeTab" role="tablist">
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tops" type="button">Tops</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bottoms" type="button">Bottoms</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#outerwear" type="button">Outerwear</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shoes" type="button">Shoes</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#accessories" type="button">Accessories</button>
+                            </div>
+                            <div class="tab-content" id="wardrobeTabContent">
+                                <div class="tab-pane fade show active" id="tops">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3 wardrobe-items" data-category="tops"></div>
+                                </div>
+                                <div class="tab-pane fade" id="bottoms">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3 wardrobe-items" data-category="bottoms"></div>
+                                </div>
+                                <div class="tab-pane fade" id="outerwear">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3 wardrobe-items" data-category="outerwear"></div>
+                                </div>
+                                <div class="tab-pane fade" id="shoes">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3 wardrobe-items" data-category="shoes"></div>
+                                </div>
+                                <div class="tab-pane fade" id="accessories">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3 wardrobe-items" data-category="accessories"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selected-items mb-3">
+                        <h6>Selected Items</h6>
+                        <div id="selectedItemsList" class="list-group">
+                            <!-- Selected items will appear here -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="newOutfitForm" class="btn btn-primary">Create Outfit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+
+    // Selected items storage
+    let selectedItems = new Set();
+
+    // Load wardrobe items when modal is shown
+    document.getElementById('newOutfitModal').addEventListener('show.bs.modal', function () {
+        // Fetch wardrobe items from the server
+        fetch('/wardrobe', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                throw new Error(data.error);
+            }
+            // Clear existing items
+            document.querySelectorAll('.wardrobe-items').forEach(container => {
+                container.innerHTML = '';
+            });
+
+            // Group items by category (case-insensitive)
+            const itemsByCategory = {
+                tops: data.filter(item => item.category?.toLowerCase().includes('top')),
+                bottoms: data.filter(item => item.category?.toLowerCase().includes('bottom')),
+                outerwear: data.filter(item => item.category?.toLowerCase().includes('outerwear') || item.category?.toLowerCase().includes('jacket')),
+                shoes: data.filter(item => item.category?.toLowerCase().includes('shoe') || item.category?.toLowerCase().includes('footwear')),
+                accessories: data.filter(item => item.category?.toLowerCase().includes('accessory') || item.category?.toLowerCase().includes('accessories'))
+            };
+
+            // Populate each category
+            let hasItems = false;
+            for (const [category, items] of Object.entries(itemsByCategory)) {
+                const container = document.querySelector(`.wardrobe-items[data-category="${category}"]`);
+                if (items.length > 0) {
+                    hasItems = true;
+                    items.forEach(item => {
+                        const itemCard = createItemCard(item);
+                        container.appendChild(itemCard);
+                    });
+                } else {
+                    container.innerHTML = '<div class="col-12 text-center text-muted py-3">No items in this category</div>';
+                }
+            }
+
+            if (!hasItems) {
+                // If no items were found at all, show a message and link to initialize wardrobe
+                document.querySelectorAll('.wardrobe-items').forEach(container => {
+                    container.innerHTML = `
+                        <div class="col-12 text-center py-3">
+                            <p class="text-muted">Your wardrobe is empty.</p>
+                            <a href="/initialize_wardrobe" class="btn btn-primary">Initialize with Sample Items</a>
+                        </div>
+                    `;
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error loading wardrobe items:', error);
+            // Show error message with initialize wardrobe option
+            document.querySelectorAll('.wardrobe-items').forEach(container => {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-3">
+                        <p class="text-danger">Failed to load wardrobe items.</p>
+                        <a href="/initialize_wardrobe" class="btn btn-primary">Initialize with Sample Items</a>
+                    </div>
+                `;
+            });
+        });
+    });
+
+    // Create item card element
+    function createItemCard(item) {
+        const col = document.createElement('div');
+        col.className = 'col';
+        
+        const card = document.createElement('div');
+        card.className = 'card h-100';
+        card.dataset.itemId = item.id;
+        
+        const img = document.createElement('img');
+        img.className = 'card-img-top';
+        img.src = item.image_url || '/static/images/placeholder.png';
+        img.alt = item.type;
+        
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        
+        const title = document.createElement('h6');
+        title.className = 'card-title';
+        title.textContent = item.type;
+        
+        const details = document.createElement('p');
+        details.className = 'card-text small text-muted';
+        details.textContent = `${item.color} - ${item.brand}`;
+        
+        const selectBtn = document.createElement('button');
+        selectBtn.className = 'btn btn-outline-primary btn-sm w-100';
+        selectBtn.textContent = 'Select';
+        selectBtn.onclick = () => toggleItemSelection(item);
+        
+        cardBody.appendChild(title);
+        cardBody.appendChild(details);
+        cardBody.appendChild(selectBtn);
+        
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        
+        col.appendChild(card);
+        return col;
+    }
+
+    // Toggle item selection
+    function toggleItemSelection(item) {
+        const itemId = item.id;
+        const selectedList = document.getElementById('selectedItemsList');
+        
+        if (selectedItems.has(itemId)) {
+            // Remove item
+            selectedItems.delete(itemId);
+            document.querySelector(`[data-selected-id="${itemId}"]`).remove();
+            document.querySelector(`[data-item-id="${itemId}"] button`).textContent = 'Select';
+            document.querySelector(`[data-item-id="${itemId}"] button`).classList.replace('btn-primary', 'btn-outline-primary');
+        } else {
+            // Add item
+            selectedItems.add(itemId);
+            const listItem = document.createElement('div');
+            listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+            listItem.dataset.selectedId = itemId;
+            
+            listItem.innerHTML = `
+                <div>
+                    <strong>${item.type}</strong>
+                    <small class="text-muted d-block">${item.color} - ${item.brand}</small>
+                </div>
+                <button class="btn btn-sm btn-outline-danger" onclick="toggleItemSelection(${JSON.stringify(item)})">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            selectedList.appendChild(listItem);
+            document.querySelector(`[data-item-id="${itemId}"] button`).textContent = 'Selected';
+            document.querySelector(`[data-item-id="${itemId}"] button`).classList.replace('btn-outline-primary', 'btn-primary');
+        }
+    }
+
+    // Handle form submission
+    document.getElementById('newOutfitForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (selectedItems.size === 0) {
+            alert('Please select at least one item for your outfit.');
+            return;
+        }
+
+        const formData = {
+            occasion: document.getElementById('occasion').value,
+            weather: document.getElementById('weather').value,
+            items: Array.from(selectedItems)
+        };
+
+        // Send the data to the server
+        fetch('/outfits/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.reload();
+            } else {
+                alert(data.message || 'Failed to create outfit. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error creating outfit:', error);
+            alert('Failed to create outfit. Please try again.');
+        });
+    });
+
+    // Initialize progress bars
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+        const rating = bar.dataset.rating;
+        if (rating) {
+            bar.style.width = `${rating * 20}%`;
+        }
+    });
+</script>
+{% endblock %} 

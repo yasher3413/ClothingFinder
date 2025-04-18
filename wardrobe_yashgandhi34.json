@@ -1,0 +1,966 @@
+[
+
+    {
+        "id": 1,
+        "brand": "Nike",
+        "type": "T-Shirt",
+        "material": "Cotton",
+        "color": "White",
+        "warmth_level": 2,
+        "category": "Top"
+    },
+    {
+        "id": 2,
+        "brand": "Adidas",
+        "type": "Long Sleeve Shirt",
+        "material": "Cotton",
+        "color": "Black",
+        "warmth_level": 4,
+        "category": "Top"
+    },
+    {
+        "id": 3,
+        "brand": "Uniqlo",
+        "type": "Sweater",
+        "material": "Wool",
+        "color": "Gray",
+        "warmth_level": 6,
+        "category": "Top"
+    },
+    {
+        "id": 4,
+        "brand": "H&M",
+        "type": "Polo Shirt",
+        "material": "Cotton",
+        "color": "Blue",
+        "warmth_level": 3,
+        "category": "Top"
+    },
+    {
+        "id": 5,
+        "brand": "Zara",
+        "type": "Tank Top",
+        "material": "Cotton",
+        "color": "Red",
+        "warmth_level": 1,
+        "category": "Top"
+    },
+    {
+        "id": 6,
+        "brand": "Gap",
+        "type": "Hoodie",
+        "material": "Fleece",
+        "color": "Green",
+        "warmth_level": 7,
+        "category": "Top"
+    },
+    {
+        "id": 7,
+        "brand": "Levi's",
+        "type": "Denim Shirt",
+        "material": "Denim",
+        "color": "Blue",
+        "warmth_level": 5,
+        "category": "Top"
+    },
+    {
+        "id": 8,
+        "brand": "Old Navy",
+        "type": "Henley",
+        "material": "Cotton",
+        "color": "Brown",
+        "warmth_level": 4,
+        "category": "Top"
+    },
+    {
+        "id": 9,
+        "brand": "Under Armour",
+        "type": "Athletic Shirt",
+        "material": "Polyester",
+        "color": "Black",
+        "warmth_level": 2,
+        "category": "Top"
+    },
+    {
+        "id": 10,
+        "brand": "Columbia",
+        "type": "Flannel Shirt",
+        "material": "Flannel",
+        "color": "Plaid",
+        "warmth_level": 6,
+        "category": "Top"
+    },
+    
+    {
+        "id": 11,
+        "brand": "Patagonia",
+        "type": "Base Layer",
+        "material": "Merino Wool",
+        "color": "Black",
+        "warmth_level": 5,
+        "category": "Top"
+    },
+    {
+        "id": 12,
+        "brand": "Lululemon",
+        "type": "Workout Shirt",
+        "material": "Nylon",
+        "color": "Gray",
+        "warmth_level": 2,
+        "category": "Top"
+    },
+    {
+        "id": 13,
+        "brand": "Banana Republic",
+        "type": "Dress Shirt",
+        "material": "Cotton",
+        "color": "White",
+        "warmth_level": 3,
+        "category": "Top"
+    },
+    {
+        "id": 14,
+        "brand": "Express",
+        "type": "Button-up Shirt",
+        "material": "Linen",
+        "color": "Beige",
+        "warmth_level": 2,
+        "category": "Top"
+    },
+    {
+        "id": 15,
+        "brand": "Brooks Brothers",
+        "type": "Oxford Shirt",
+        "material": "Cotton",
+        "color": "Light Blue",
+        "warmth_level": 3,
+        "category": "Top"
+    },
+    {
+        "id": 16,
+        "brand": "Tommy Hilfiger",
+        "type": "Sweatshirt",
+        "material": "Cotton Blend",
+        "color": "Navy",
+        "warmth_level": 5,
+        "category": "Top"
+    },
+    {
+        "id": 17,
+        "brand": "Hollister",
+        "type": "Graphic Tee",
+        "material": "Cotton",
+        "color": "White",
+        "warmth_level": 2,
+        "category": "Top"
+    },
+    {
+        "id": 18,
+        "brand": "Abercrombie & Fitch",
+        "type": "Plaid Shirt",
+        "material": "Cotton",
+        "color": "Red",
+        "warmth_level": 4,
+        "category": "Top"
+    },
+    {
+        "id": 19,
+        "brand": "Ralph Lauren",
+        "type": "Rugby Shirt",
+        "material": "Cotton",
+        "color": "Navy/White Stripes",
+        "warmth_level": 4,
+        "category": "Top"
+    },
+    {
+        "id": 20,
+        "brand": "Champion",
+        "type": "Crewneck Sweatshirt",
+        "material": "Fleece",
+        "color": "Gray",
+        "warmth_level": 6,
+        "category": "Top"
+    },
+    {
+        "id": 21,
+        "brand": "North Face",
+        "type": "Thermal Shirt",
+        "material": "Polyester",
+        "color": "Black",
+        "warmth_level": 5,
+        "category": "Top"
+    },
+    {
+        "id": 22,
+        "brand": "Quiksilver",
+        "type": "Surf Tee",
+        "material": "Polyester",
+        "color": "Yellow",
+        "warmth_level": 1,
+        "category": "Top"
+    },
+   
+    {
+        "id": 101,
+        "brand": "Levi's",
+        "type": "Jeans",
+        "material": "Denim",
+        "color": "Blue",
+        "warmth_level": 5,
+        "category": "Bottom"
+    },
+    {
+        "id": 102,
+        "brand": "Dockers",
+        "type": "Chinos",
+        "material": "Cotton",
+        "color": "Khaki",
+        "warmth_level": 4,
+        "category": "Bottom"
+    },
+    {
+        "id": 103,
+        "brand": "Nike",
+        "type": "Sweatpants",
+        "material": "Fleece",
+        "color": "Black",
+        "warmth_level": 6,
+        "category": "Bottom"
+    },
+    {
+        "id": 104,
+        "brand": "Adidas",
+        "type": "Track Pants",
+        "material": "Polyester",
+        "color": "Blue",
+        "warmth_level": 3,
+        "category": "Bottom"
+    },
+    {
+        "id": 105,
+        "brand": "H&M",
+        "type": "Shorts",
+        "material": "Cotton",
+        "color": "Gray",
+        "warmth_level": 1,
+        "category": "Bottom"
+    },
+    {
+        "id": 106,
+        "brand": "Gap",
+        "type": "Cargo Pants",
+        "material": "Cotton",
+        "color": "Olive",
+        "warmth_level": 5,
+        "category": "Bottom"
+    },
+    {
+        "id": 107,
+        "brand": "Under Armour",
+        "type": "Running Shorts",
+        "material": "Polyester",
+        "color": "Black",
+        "warmth_level": 1,
+        "category": "Bottom"
+    },
+    {
+        "id": 108,
+        "brand": "Old Navy",
+        "type": "Khaki Pants",
+        "material": "Cotton",
+        "color": "Beige",
+        "warmth_level": 4,
+        "category": "Bottom"
+    },
+    {
+        "id": 109,
+        "brand": "Columbia",
+        "type": "Hiking Pants",
+        "material": "Nylon",
+        "color": "Gray",
+        "warmth_level": 3,
+        "category": "Bottom"
+    },
+    {
+        "id": 110,
+        "brand": "Zara",
+        "type": "Dress Pants",
+        "material": "Wool Blend",
+        "color": "Black",
+        "warmth_level": 5,
+        "category": "Bottom"
+    },
+    
+    {
+        "id": 111,
+        "brand": "Patagonia",
+        "type": "Climbing Pants",
+        "material": "Nylon",
+        "color": "Green",
+        "warmth_level": 3,
+        "category": "Bottom"
+    },
+    {
+        "id": 112,
+        "brand": "Lululemon",
+        "type": "Joggers",
+        "material": "Polyester",
+        "color": "Navy",
+        "warmth_level": 4,
+        "category": "Bottom"
+    },
+    {
+        "id": 113,
+        "brand": "Banana Republic",
+        "type": "Slim Fit Pants",
+        "material": "Cotton",
+        "color": "Dark Gray",
+        "warmth_level": 4,
+        "category": "Bottom"
+    },
+    {
+        "id": 114,
+        "brand": "Express",
+        "type": "Linen Pants",
+        "material": "Linen",
+        "color": "White",
+        "warmth_level": 2,
+        "category": "Bottom"
+    },
+    {
+        "id": 115,
+        "brand": "Brooks Brothers",
+        "type": "Wool Trousers",
+        "material": "Wool",
+        "color": "Charcoal",
+        "warmth_level": 6,
+        "category": "Bottom"
+    },
+    {
+        "id": 116,
+        "brand": "Tommy Hilfiger",
+        "type": "Denim Shorts",
+        "material": "Denim",
+        "color": "Light Blue",
+        "warmth_level": 2,
+        "category": "Bottom"
+    },
+    {
+        "id": 117,
+        "brand": "Hollister",
+        "type": "Board Shorts",
+        "material": "Polyester",
+        "color": "Red",
+        "warmth_level": 1,
+        "category": "Bottom"
+    },
+    {
+        "id": 118,
+        "brand": "Abercrombie & Fitch",
+        "type": "Slim Jeans",
+        "material": "Denim",
+        "color": "Dark Blue",
+        "warmth_level": 5,
+        "category": "Bottom"
+    },
+    {
+        "id": 119,
+        "brand": "Ralph Lauren",
+        "type": "Pleated Pants",
+        "material": "Cotton",
+        "color": "Tan",
+        "warmth_level": 4,
+        "category": "Bottom"
+    },
+    {
+        "id": 120,
+        "brand": "Champion",
+        "type": "Mesh Shorts",
+        "material": "Polyester",
+        "color": "Black",
+        "warmth_level": 1,
+        "category": "Bottom"
+    },
+    {
+        "id": 121,
+        "brand": "North Face",
+        "type": "Ski Pants",
+        "material": "Nylon",
+        "color": "Black",
+        "warmth_level": 8,
+        "category": "Bottom"
+    },
+   
+    {
+        "id": 201,
+        "brand": "North Face",
+        "type": "Winter Jacket",
+        "material": "Down",
+        "color": "Black",
+        "warmth_level": 9,
+        "category": "Outerwear"
+    },
+    {
+        "id": 202,
+        "brand": "Columbia",
+        "type": "Rain Jacket",
+        "material": "Nylon",
+        "color": "Yellow",
+        "warmth_level": 4,
+        "category": "Outerwear"
+    },
+    {
+        "id": 203,
+        "brand": "Patagonia",
+        "type": "Fleece Jacket",
+        "material": "Fleece",
+        "color": "Gray",
+        "warmth_level": 7,
+        "category": "Outerwear"
+    },
+    {
+        "id": 204,
+        "brand": "Uniqlo",
+        "type": "Lightweight Parka",
+        "material": "Polyester",
+        "color": "Navy",
+        "warmth_level": 5,
+        "category": "Outerwear"
+    },
+    {
+        "id": 205,
+        "brand": "Gap",
+        "type": "Denim Jacket",
+        "material": "Denim",
+        "color": "Blue",
+        "warmth_level": 6,
+        "category": "Outerwear"
+    },
+    {
+        "id": 206,
+        "brand": "Zara",
+        "type": "Leather Jacket",
+        "material": "Leather",
+        "color": "Black",
+        "warmth_level": 7,
+        "category": "Outerwear"
+    },
+    {
+        "id": 207,
+        "brand": "H&M",
+        "type": "Windbreaker",
+        "material": "Polyester",
+        "color": "Green",
+        "warmth_level": 3,
+        "category": "Outerwear"
+    },
+    {
+        "id": 208,
+        "brand": "Nike",
+        "type": "Track Jacket",
+        "material": "Polyester",
+        "color": "Red",
+        "warmth_level": 4,
+        "category": "Outerwear"
+    },
+    {
+        "id": 209,
+        "brand": "Adidas",
+        "type": "Hooded Jacket",
+        "material": "Fleece",
+        "color": "Black",
+        "warmth_level": 6,
+        "category": "Outerwear"
+    },
+    {
+        "id": 210,
+        "brand": "Levi's",
+        "type": "Trucker Jacket",
+        "material": "Denim",
+        "color": "Light Blue",
+        "warmth_level": 5,
+        "category": "Outerwear"
+    },
+    
+    {
+        "id": 211,
+        "brand": "Burberry",
+        "type": "Trench Coat",
+        "material": "Cotton",
+        "color": "Beige",
+        "warmth_level": 6,
+        "category": "Outerwear"
+    },
+    {
+        "id": 212,
+        "brand": "Moncler",
+        "type": "Puffer Jacket",
+        "material": "Down",
+        "color": "Navy",
+        "warmth_level": 9,
+        "category": "Outerwear"
+    },
+    {
+        "id": 213,
+        "brand": "Canada Goose",
+        "type": "Parka",
+        "material": "Down",
+        "color": "Black",
+        "warmth_level": 10,
+        "category": "Outerwear"
+    },
+    {
+        "id": 214,
+        "brand": "Carhartt",
+        "type": "Work Jacket",
+        "material": "Canvas",
+        "color": "Brown",
+        "warmth_level": 7,
+        "category": "Outerwear"
+    },
+    {
+        "id": 215,
+        "brand": "Tommy Hilfiger",
+        "type": "Peacoat",
+        "material": "Wool",
+        "color": "Gray",
+        "warmth_level": 8,
+        "category": "Outerwear"
+    },
+    {
+        "id": 216,
+        "brand": "Ralph Lauren",
+        "type": "Blazer",
+        "material": "Wool",
+        "color": "Navy",
+        "warmth_level": 5,
+        "category": "Outerwear"
+    },
+    {
+        "id": 217,
+        "brand": "Barbour",
+        "type": "Waxed Jacket",
+        "material": "Cotton",
+        "color": "Olive",
+        "warmth_level": 6,
+        "category": "Outerwear"
+    },
+    {
+        "id": 218,
+        "brand": "LL Bean",
+        "type": "Field Coat",
+        "material": "Canvas",
+        "color": "Tan",
+        "warmth_level": 7,
+        "category": "Outerwear"
+    },
+    {
+        "id": 219,
+        "brand": "Arc'teryx",
+        "type": "Shell Jacket",
+        "material": "Gore-Tex",
+        "color": "Black",
+        "warmth_level": 4,
+        "category": "Outerwear"
+    },
+    {
+        "id": 220,
+        "brand": "Marmot",
+        "type": "Softshell Jacket",
+        "material": "Polyester",
+        "color": "Red",
+        "warmth_level": 5,
+        "category": "Outerwear"
+    },
+    {
+        "id": 221,
+        "brand": "Supreme",
+        "type": "Hooded Sweatshirt",
+        "material": "Cotton",
+        "color": "White",
+        "warmth_level": 6,
+        "category": "Outerwear"
+    },
+  
+    {
+        "id": 301,
+        "brand": "Nike",
+        "type": "Running Shoes",
+        "material": "Mesh",
+        "color": "Black",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 302,
+        "brand": "Adidas",
+        "type": "Sneakers",
+        "material": "Leather",
+        "color": "White",
+        "warmth_level": 2,
+        "category": "Footwear"
+    },
+    {
+        "id": 303,
+        "brand": "Timberland",
+        "type": "Boots",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 7,
+        "category": "Footwear"
+    },
+    {
+        "id": 304,
+        "brand": "Converse",
+        "type": "Chuck Taylors",
+        "material": "Canvas",
+        "color": "Red",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 305,
+        "brand": "Birkenstock",
+        "type": "Sandals",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 306,
+        "brand": "Vans",
+        "type": "Slip-Ons",
+        "material": "Canvas",
+        "color": "Black",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 307,
+        "brand": "Clarks",
+        "type": "Desert Boots",
+        "material": "Suede",
+        "color": "Beige",
+        "warmth_level": 5,
+        "category": "Footwear"
+    },
+    {
+        "id": 308,
+        "brand": "Dr. Martens",
+        "type": "Combat Boots",
+        "material": "Leather",
+        "color": "Black",
+        "warmth_level": 6,
+        "category": "Footwear"
+    },
+    {
+        "id": 309,
+        "brand": "Sperry",
+        "type": "Boat Shoes",
+        "material": "Leather",
+        "color": "Navy",
+        "warmth_level": 2,
+        "category": "Footwear"
+    },
+    {
+        "id": 310,
+        "brand": "New Balance",
+        "type": "Trainers",
+        "material": "Mesh",
+        "color": "Gray",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    
+    {
+        "id": 311,
+        "brand": "ASICS",
+        "type": "Running Shoes",
+        "material": "Mesh",
+        "color": "Blue",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 312,
+        "brand": "Cole Haan",
+        "type": "Oxfords",
+        "material": "Leather",
+        "color": "Black",
+        "warmth_level": 3,
+        "category": "Footwear"
+    },
+    {
+        "id": 313,
+        "brand": "Johnston & Murphy",
+        "type": "Dress Shoes",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 3,
+        "category": "Footwear"
+    },
+    {
+        "id": 314,
+        "brand": "Reebok",
+        "type": "Classic Sneakers",
+        "material": "Leather",
+        "color": "White",
+        "warmth_level": 2,
+        "category": "Footwear"
+    },
+    {
+        "id": 315,
+        "brand": "UGG",
+        "type": "Sheepskin Boots",
+        "material": "Sheepskin",
+        "color": "Tan",
+        "warmth_level": 8,
+        "category": "Footwear"
+    },
+    {
+        "id": 316,
+        "brand": "Merrell",
+        "type": "Hiking Boots",
+        "material": "Leather",
+        "color": "Gray",
+        "warmth_level": 7,
+        "category": "Footwear"
+    },
+    {
+        "id": 317,
+        "brand": "Toms",
+        "type": "Espadrilles",
+        "material": "Canvas",
+        "color": "Blue",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+    {
+        "id": 318,
+        "brand": "Puma",
+        "type": "Sneakers",
+        "material": "Suede",
+        "color": "Green",
+        "warmth_level": 2,
+        "category": "Footwear"
+    },
+    {
+        "id": 319,
+        "brand": "Salomon",
+        "type": "Trail Shoes",
+        "material": "Mesh",
+        "color": "Black",
+        "warmth_level": 2,
+        "category": "Footwear"
+    },
+    {
+        "id": 320,
+        "brand": "Hush Puppies",
+        "type": "Loafers",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 3,
+        "category": "Footwear"
+    },
+    {
+        "id": 321,
+        "brand": "Crocs",
+        "type": "Clogs",
+        "material": "Rubber",
+        "color": "Yellow",
+        "warmth_level": 1,
+        "category": "Footwear"
+    },
+ 
+    {
+        "id": 401,
+        "brand": "Ray-Ban",
+        "type": "Sunglasses",
+        "material": "Plastic",
+        "color": "Black",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 402,
+        "brand": "Nike",
+        "type": "Baseball Cap",
+        "material": "Cotton",
+        "color": "Blue",
+        "warmth_level": 1,
+        "category": "Accessory"
+    },
+    {
+        "id": 403,
+        "brand": "Burberry",
+        "type": "Scarf",
+        "material": "Wool",
+        "color": "Plaid",
+        "warmth_level": 4,
+        "category": "Accessory"
+    },
+    {
+        "id": 404,
+        "brand": "H&M",
+        "type": "Belt",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 405,
+        "brand": "Timex",
+        "type": "Wristwatch",
+        "material": "Metal",
+        "color": "Silver",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 406,
+        "brand": "Carhartt",
+        "type": "Beanie",
+        "material": "Acrylic",
+        "color": "Black",
+        "warmth_level": 3,
+        "category": "Accessory"
+    },
+    {
+        "id": 407,
+        "brand": "Herschel",
+        "type": "Backpack",
+        "material": "Canvas",
+        "color": "Gray",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 408,
+        "brand": "Columbia",
+        "type": "Gloves",
+        "material": "Fleece",
+        "color": "Black",
+        "warmth_level": 4,
+        "category": "Accessory"
+    },
+    {
+        "id": 409,
+        "brand": "Gucci",
+        "type": "Sunglasses",
+        "material": "Plastic",
+        "color": "Brown",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 410,
+        "brand": "Oakley",
+        "type": "Visor",
+        "material": "Polyester",
+        "color": "White",
+        "warmth_level": 1,
+        "category": "Accessory"
+    },
+ 
+    {
+        "id": 411,
+        "brand": "Fossil",
+        "type": "Leather Bracelet",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 412,
+        "brand": "Apple",
+        "type": "Smartwatch",
+        "material": "Aluminum",
+        "color": "Space Gray",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 413,
+        "brand": "Hermès",
+        "type": "Silk Scarf",
+        "material": "Silk",
+        "color": "Multicolor",
+        "warmth_level": 1,
+        "category": "Accessory"
+    },
+    {
+        "id": 414,
+        "brand": "Louis Vuitton",
+        "type": "Wallet",
+        "material": "Leather",
+        "color": "Brown",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 415,
+        "brand": "Rolex",
+        "type": "Luxury Watch",
+        "material": "Gold",
+        "color": "Gold",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 416,
+        "brand": "Supreme",
+        "type": "Headband",
+        "material": "Cotton",
+        "color": "Red",
+        "warmth_level": 1,
+        "category": "Accessory"
+    },
+    {
+        "id": 417,
+        "brand": "Seiko",
+        "type": "Automatic Watch",
+        "material": "Stainless Steel",
+        "color": "Silver",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 418,
+        "brand": "Versace",
+        "type": "Sunglasses",
+        "material": "Metal",
+        "color": "Black",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 419,
+        "brand": "Adidas",
+        "type": "Gym Bag",
+        "material": "Polyester",
+        "color": "Black",
+        "warmth_level": 0,
+        "category": "Accessory"
+    },
+    {
+        "id": 420,
+        "brand": "Stetson",
+        "type": "Fedora Hat",
+        "material": "Felt",
+        "color": "Brown",
+        "warmth_level": 2,
+        "category": "Accessory"
+    },
+    {
+        "id": 421,
+        "brand": "North Face",
+        "type": "Neck Gaiter",
+        "material": "Fleece",
+        "color": "Black",
+        "warmth_level": 3,
+        "category": "Accessory"
+    }
+]

@@ -29,8 +29,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config.from_object(config['development'])
-app.config['SECRET_KEY'] = 'your-secret-key'  # Replace with your secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dresssense.db'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///dresssense.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize extensions
@@ -585,3 +585,7 @@ def initialize_wardrobe():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Add this for Vercel
+def handler(event, context):
+    return app(event, context)
